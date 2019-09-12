@@ -1,9 +1,11 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPause, faPlay, faStepBackward, faStepForward } from "@fortawesome/free-solid-svg-icons";
+import useMusicPlayer from '../hooks/useMusicPlayer';
 
 const Controls = () => {
-  const isPlaying= true, currentTrackName= 'track1', togglePlay= () => {}, playPreviousTrack= () => {}, playNextTrack= () => {};
+  const { isPlaying, currentTrackName, togglePlay, playPreviousTrack, playNextTrack } = useMusicPlayer();
+
   return (
     <>
       <div className="box controls has-background-grey-dark">
