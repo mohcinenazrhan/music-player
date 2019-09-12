@@ -19,7 +19,7 @@ const TrackList = () => {
       {trackList.map((track, index) => (
         <div className="box" key={index}>
           <button className="button" onClick={() => playTrack(index)}>
-            {isPlayed() ? <FontAwesomeIcon icon={faPlay} /> : <FontAwesomeIcon icon={faPause} />}
+            {isPlayed(track.name) ? <FontAwesomeIcon icon={faPlay} /> : <FontAwesomeIcon icon={faPause} />}
           </button>
           <div className="song-title">
             {track.name}
