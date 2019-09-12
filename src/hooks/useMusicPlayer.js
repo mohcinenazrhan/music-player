@@ -41,13 +41,18 @@ const useMusicPlayer = () => {
 
 	// Check if the given track name is the current track playing
 	function isThisTrackPlaying(name) {
-		return state.currentTrackName === name && state.isPlaying;
+		return getCurrentTrackName() === name && state.isPlaying;
+	}
+
+	// Retrun the current track name
+	function getCurrentTrackName() {
+		return state.currentTrackIndex !== null && state.tracks[state.currentTrackIndex].name;
 	}
 
 	return {
 		playTrack,
 		togglePlay,
-		currentTrackName: state.currentTrackIndex !== null && state.tracks[state.currentTrackIndex].name,
+		currentTrackName: getCurrentTrackName(),
 		trackList: state.tracks,
 		isPlaying: state.isPlaying,
 		playPreviousTrack,
