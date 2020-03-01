@@ -14,13 +14,13 @@ const Controls = () => {
           <marquee>{currentTrackName}</marquee>
         </div>
         <div>
-          <button className="button has-text-light has-background-grey-dark" onClick={playPreviousTrack} disabled={!currentTrackName}>
+          <button aria-label="Play the previous track" className="button has-text-light has-background-grey-dark" onClick={playPreviousTrack} disabled={!currentTrackName}>
             <FontAwesomeIcon icon={faStepBackward} />
           </button>
-          <button className="button has-text-light has-background-grey-dark" onClick={togglePlay} disabled={!currentTrackName}>
+          <button aria-label={isPlaying ? 'Pause the track' : 'Play the track'} className="button has-text-light has-background-grey-dark" onClick={togglePlay} disabled={!currentTrackName}>
             {isPlaying ? <FontAwesomeIcon icon={faPause} /> : <FontAwesomeIcon icon={faPlay} />}
           </button>
-          <button className="button has-text-light has-background-grey-dark" onClick={playNextTrack} disabled={!currentTrackName}>
+          <button aria-label="Play the next track" className="button has-text-light has-background-grey-dark" onClick={playNextTrack} disabled={!currentTrackName}>
             <FontAwesomeIcon icon={faStepForward} />
           </button>
         </div>
